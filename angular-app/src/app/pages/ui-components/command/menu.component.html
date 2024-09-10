@@ -1,0 +1,52 @@
+<div class="bg">
+  <h1 style="color: black; text-align: left;">Commandes</h1>
+  <br><br>    
+
+  <table class="table">
+    <thead>
+      <tr style="text-align: center;">
+        <th scope="col">Order ID</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Status</th>
+        <th scope="col">Prix/unit</th>
+        <th scope="col">Total</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let commande of commandes">
+        <ng-container *ngIf="commande.lcommandes.length > 0">
+          <ng-container *ngFor="let lcommande of commande.lcommandes">
+            <ng-container *ngFor="let produit of produits">
+              <ng-container *ngIf="lcommande.product_id == produit.id">
+                <ng-container *ngFor="let user of users">
+                  <ng-container *ngIf="commande.user_id == user.id && name_imp == user.name">
+                    <tr style="text-align: center;">
+                      <th scope="row">{{ lcommande.commande_id }}</th>
+                      <td>{{ user.name }}</td>
+                      <td>{{ produit.titre }}</td>
+                      <td>{{ lcommande.quantite }}</td>
+                      <td style="background-color: rgb(233, 140, 140); margin: 1%;">En cours</td>
+                      <td>${{ produit.prix }}</td>
+                      <td>${{ lcommande.quantite * produit.prix }}</td>
+                      <td>
+                        <button 
+                          style="padding: 1.5%; border: none; background-color: rgb(5, 144, 144); color: white; border-radius: 3%;"
+                          (click)="deleteCommand(commande.id)"
+                        >
+                          Delete command
+                        </button>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

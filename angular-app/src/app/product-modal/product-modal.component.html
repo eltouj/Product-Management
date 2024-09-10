@@ -1,0 +1,14 @@
+<h2 mat-dialog-title style="color: rgb(5, 144, 144);">Product Confirmation</h2>
+<mat-dialog-content>
+  <p>{{ data.productTitle }}</p>
+  <mat-form-field>
+    <mat-label>Quantity</mat-label>
+    <input matInput [(ngModel)]="quantity" type="number" min="1">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions style="margin-left: 19%;">
+  <button mat-button (click)="onCancel() " style="padding: 1.5%; border: none; background-color: rgb(67, 116, 98); color: white; border-radius: 3%;"
+  >Cancel</button>
+  <button mat-button (click)="onConfirm()" style="padding: 1.5%; border: none; background-color: rgb(5, 144, 144); color: white; border-radius: 3%;"
+  >Confirm</button>
+</mat-dialog-actions>

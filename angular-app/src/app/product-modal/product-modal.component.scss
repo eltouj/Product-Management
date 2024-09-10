@@ -1,0 +1,30 @@
+
+  
+  .mat-dialog-container {
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .mat-dialog-title {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .mat-button {
+    font-family: 'Oswald', Arial, sans-serif;
+    text-transform: uppercase;
+  }
+  

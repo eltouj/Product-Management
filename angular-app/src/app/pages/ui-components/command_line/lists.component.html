@@ -1,0 +1,21 @@
+
+
+  <div class="product-container">
+    <figure class="snip1492" *ngFor="let produit of produits" (click)="openProductModal(produit) ">
+      <img [src]="'http://127.0.0.1:8000/' + produit.img_url" alt="{{ produit.titre }}" />
+      <figcaption>
+        <h3>{{ produit.titre }}</h3>
+        <p>{{ produit.description }}</p>
+        <div class="price">
+          <s>${{ produit.prix }}</s>${{ produit.prix }}
+        </div>
+      </figcaption>
+      <i class="ion-plus-round"></i>
+      
+    </figure>
+  </div>
+  
+  
+  
+  
+  

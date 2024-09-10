@@ -1,0 +1,110 @@
+
+
+    
+
+<div class="bg" >
+  
+    <div class="container" style="padding: 2%;">
+      <h2>Create a New Product</h2>
+      <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" placeholder="Product" [(ngModel)]="product.titre" required />
+        
+      </div>
+      <div class="form-group">
+        <label for="brand">Category</label>
+        <select id="category" (change)="onCategoryChange($event)">
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.titre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" rows="4" placeholder="We have been doing  business for many years together with our partners.                                                     
+
+Availability:
+- We offer our customers an enjoyable use, so we make them Happy
+
+
+        "  [(ngModel)]="product.description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="salePrice">Sale Price</label>
+        <input type="integer" id="salePrice" placeholder="$750.00" [(ngModel)]="product.prix" required/>
+      </div>
+      <div class="form-group">
+        <label for="discount">Discount</label>
+        <input type="text" id="discount" placeholder="$20.00" [(ngModel)]="product.discount" required />
+      </div>
+      
+      <div class="form-group">
+        <label>Select Colors</label>
+        <div class="color-options">
+          <button class="color-btn" style="background-color: #61e397;" (click)="onColorSelect('#61e397')"></button>
+          <button class="color-btn" style="background-color: #59a7e8;" (click)="onColorSelect('#59a7e8')"></button>
+          <button class="color-btn" style="background-color: #dd547f;" (click)="onColorSelect('#dd547f')"></button>
+          <button class="color-btn" style="background-color: #dfd154;" (click)="onColorSelect('#dfd154')"></button>
+          <button class="color-btn" style="background-color: #9f528c;" (click)="onColorSelect('#9f528c')"></button>
+          <button class="color-btn" style="background-color: #d963ee;" (click)="onColorSelect('#d963ee')"></button>
+          <button class="color-btn" style="background-color: #976959;" (click)="onColorSelect('#976959')"></button>
+          <button class="color-btn" style="background-color: #7687e3;" (click)="onColorSelect('#7687e3')"></button>
+        </div>
+        
+      </div>
+      <div class="actions">
+        <button class="cancel-btn" >Cancel</button>
+        <button class="publish-btn" onclick="alert('product added successfully') "(click)="ajout_produit()" >Publish</button>
+      </div>
+    </div>
+    
+  
+  <div class="bg2">
+    
+    <div class="product-form">
+      <div class="tag-input">
+        <label for="tag">Tag</label>
+        <input type="text" id="tag" placeholder="Type and enter">
+      </div>
+    
+      <div class="product-image">
+        <label>Product Image</label>
+        <div class="image-upload">
+          <div class="upload-box">
+
+            <button type="button" class="sel" style="background-color: #97685900; border: none; font-size: small; font-weight: 150;" (click)="triggerFileInput()">Click here to browse</button>
+            <input type="file" #fileInput name="img_url" (change)="selected($event)" required hidden>
+          </div>
+          <div class="image-preview">
+            <div class="preview-box" [style.backgroundImage]="'url(' + imageUrl + ')'" *ngIf="imageUrl"></div>
+            <div class="preview-box"></div>
+          </div>
+        </div>
+        <p class="image-note"> Pay attention to the quality of the pictures you add.</p>
+      </div>
+    
+      <div class="visibility">
+        <label>Visibility</label>
+        <div class="visibility-options">
+          <label>
+            <input type="radio" name="visibility" value="published" checked>
+            Published
+          </label>
+          <label>
+            <input type="radio" name="visibility" value="schedule">
+            Schedule
+          </label>
+          <label>
+            <input type="radio" name="visibility" value="hidden">
+            Hidden
+          </label>
+          <div class="schedule-date">
+            <input type="date">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+
+  
+
+</div>
